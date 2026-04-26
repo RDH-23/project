@@ -1,0 +1,268 @@
+/* Poppins Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary: #ff6b6b;
+  --primary-hover: #ff4c4c;
+  --bg-main: #0b0f0c;
+  --bg-section: #161313;
+  --text-main: #ffecec;
+  --text-secondary: #d6b3b3;
+  --border: #3a1f1f;
+}
+
+/* Global Resets & Typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* Navbar Layout */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: var(--bg-main);
+  border-bottom: 1px solid var(--border);
+  gap: 2rem;
+  flex-wrap: wrap; /* Helps with responsiveness */
+}
+
+/* --- Logo Section --- */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logo-icon {
+  color: var(--primary);
+  /* Thicker stroke to mimic the filled look of the original */
+  stroke-width: 2.5;
+  width: 28px;
+  height: 28px;
+}
+
+.logo-text {
+  color: var(--text-main);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* --- Left Navigation Menu --- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--text-main);
+}
+
+/* Dropdown specific styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.dropdown-trigger:hover,
+.dropdown-trigger.active {
+  color: var(--text-main);
+}
+
+.dropdown-trigger .feather {
+  width: 16px;
+  height: 16px;
+}
+
+.dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  background-color: var(--bg-section);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  min-width: 200px;
+  padding: 0.5rem 0;
+  z-index: 100;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-menu.show {
+  display: flex;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--border);
+  color: var(--text-main);
+}
+
+/* --- Center Search Bar --- */
+.search-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 600px;
+  background-color: var(--bg-section);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  gap: 0.75rem;
+  transition: border-color 0.2s;
+}
+
+/* Pronounced border on focus */
+.search-container:focus-within {
+  border-color: var(--text-secondary);
+}
+
+.search-icon {
+  color: var(--text-secondary);
+  width: 18px;
+  height: 18px;
+}
+
+.search-container input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+.search-container input::placeholder {
+  color: var(--text-secondary);
+}
+
+/* --- Right Action Section --- */
+.action-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  color: var(--text-main);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.profile-link:hover {
+  opacity: 0.8;
+}
+
+.profile-link .feather {
+  width: 22px;
+  height: 22px;
+}
+
+.login-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.login-link:hover {
+  color: var(--text-main);
+}
+
+.register-btn {
+  text-decoration: none;
+  background-color: var(--primary);
+  color: var(--text-main);
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.register-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Basic Responsiveness */
+@media (max-width: 900px) {
+  .navbar {
+    justify-content: center;
+  }
+  .search-container {
+    order: 3;
+    min-width: 100%;
+  }
+  .navbar-left {
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
