@@ -1,0 +1,294 @@
+/* =========================================
+   DESAIN KHUSUS HALAMAN DETAIL FILM
+   (Variabel utama sudah diambil dari navbar.css)
+   ========================================= */
+
+/* --- Hero Section Film --- */
+.film-hero {
+  position: relative;
+  padding: 4rem 2rem;
+  /* PENTING: url() diganti dengan var(--bg-hero) */
+  background:
+    linear-gradient(to bottom, rgba(11, 15, 12, 0.7) 0%, var(--bg-main) 100%),
+    var(--bg-hero) center/cover;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.poster-utama {
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+}
+
+.film-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.film-judul {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.film-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.meta-rating {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.genre-tags {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: rgba(255, 107, 107, 0.1);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.film-deskripsi {
+  line-height: 1.8;
+  color: var(--text-main);
+  font-size: 1.05rem;
+  max-width: 800px;
+}
+
+/* --- Tombol Aksi --- */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-utama {
+  background-color: var(--primary);
+  color: var(--text-main);
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
+  text-decoration: none;
+}
+
+.btn-utama:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.05);
+}
+
+.btn-sekunder {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 2px solid var(--border);
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn-sekunder:hover {
+  border-color: var(--text-secondary);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* --- Streaming Player Section --- */
+.streaming-section {
+  max-width: 1000px;
+  margin: 2rem auto 5rem auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.video-player-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+.video-player-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.server-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  background-color: var(--bg-section);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.server-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.btn-server {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-server.active,
+.btn-server:hover {
+  background-color: var(--primary);
+  color: var(--text-main);
+  border-color: var(--primary);
+}
+
+/* --- Modal Trailer (Pop-up) --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.show {
+  display: flex;
+  opacity: 1;
+}
+.modal-content {
+  width: 80%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  background-color: #000;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(255, 107, 107, 0.2);
+}
+
+.btn-tutup-modal {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-tutup-modal:hover {
+  color: var(--primary);
+}
+.modal-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/* --- Responsif HP --- */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .film-judul {
+    font-size: 2.5rem;
+  }
+  .film-meta {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .genre-tags {
+    justify-content: center;
+  }
+  .action-buttons {
+    justify-content: center;
+  }
+  .modal-content {
+    width: 95%;
+  }
+  .server-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

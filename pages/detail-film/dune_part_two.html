@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Film: Dune Part Two - Pilin.in</title>
+
+    <!-- Poppins Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Memanggil CSS Global dan Khusus -->
+    <link rel="stylesheet" href="../../assets/css/navbar.css" />
+    <link rel="stylesheet" href="../../assets/css/detail-film.css" />
+
+    <!-- Smooth scroll untuk tombol 'Nonton Sekarang' -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+
+  </head>
+  <body>
+    <!-- NAVBAR WISNU -->
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="daftar-film.html" class="logo-container">
+          <i data-feather="film" class="logo-icon"></i>
+          <span class="logo-text">Pilin.<i>in</i> </span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="daftar-film.html">Katalog</a></li>
+          <li class="dropdown">
+            <button class="dropdown-trigger" id="about-us-trigger">
+              About Us <i data-feather="chevron-down"></i>
+            </button>
+            <ul class="dropdown-menu" id="about-us-menu">
+              <li><a href="../web-pribadi/wisnu.html">Wisnu Aji</a></li>
+              <li><a href="#">Rina</a></li>
+              <li><a href="#">Yolanda</a></li>
+              <li>
+                <a href="#" style="color: var(--primary)">Restu (Kamu)</a>
+              </li>
+              <li><a href="#">Rizky</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="search-container">
+        <i data-feather="search" class="search-icon"></i>
+        <input type="text" placeholder="Search movies, actors..." />
+      </div>
+      <div class="action-section">
+        <a href="../dashboard-guest/dashboard-guest.html" class="profile-link"
+          ><i data-feather="user"></i
+        ></a>
+        <a href="../login/login.html" class="login-link">Masuk</a>
+        <a href="../daftar/daftar.html" class="register-btn">Daftar</a>
+      </div>
+    </nav>
+
+    <!-- ========================================================
+         KONTEN DETAIL FILM
+         ======================================================== -->
+
+    <!-- 
+        PENTING: Di sinilah kita mengatur Background Gambar (Hero) 
+        Ganti URL di dalam style="--bg-hero: url('...');"
+    -->
+    <section
+      class="film-hero"
+      style="
+        --bg-hero: url(&quot;https://placehold.co/1200x500/161313/3a1f1f?text=Background+Gurun+Pasir+Dune&quot;);
+      "
+    >
+      <div class="hero-content">
+        <!-- Ganti src="..." ini untuk poster utama -->
+        <img
+          src="https://placehold.co/400x600/161313/ff6b6b?text=DUNE+PART+2"
+          alt="Dune Part Two Poster"
+          class="poster-utama"
+        />
+
+        <div class="film-info-container">
+          <!-- Ganti Judul -->
+          <h1 class="film-judul">Dune: Part Two</h1>
+
+          <div class="film-meta">
+            <span class="meta-item"
+              ><i data-feather="calendar" width="16"></i> 2024</span
+            >
+            <span class="meta-item"
+              ><i data-feather="clock" width="16"></i> 2j 46m</span
+            >
+            <span class="meta-item meta-rating"
+              ><i data-feather="star" width="16" fill="#ffd700"></i> 8.9 /
+              10</span
+            >
+          </div>
+
+          <div class="genre-tags">
+            <span class="tag">Sci-Fi</span>
+            <span class="tag">Adventure</span>
+            <span class="tag">Action</span>
+          </div>
+
+          <!-- Ganti Sinopsis -->
+          <p class="film-deskripsi">
+            Paul Atreides bersatu dengan Chani dan Fremen saat sedang dalam
+            jalur balas dendam melawan konspirator yang menghancurkan
+            keluarganya. Menghadapi pilihan antara cinta sejati dan nasib alam
+            semesta, ia harus mencegah masa depan mengerikan yang hanya bisa ia
+            ramalkan.
+          </p>
+
+          <div class="action-buttons">
+            <a href="#area-streaming" class="btn-utama">
+              <i data-feather="play-circle"></i> Nonton Sekarang
+            </a>
+            <button class="btn-sekunder" id="btn-tonton-trailer">
+              <i data-feather="youtube"></i> Trailer
+            </button>
+            <button class="btn-sekunder" title="Tambahkan ke Watchlist Wisnu">
+              <i data-feather="bookmark"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AREA STREAMING -->
+    <section class="streaming-section" id="area-streaming">
+      <h2 class="section-title">
+        <i data-feather="monitor"></i> Nonton Dune: Part Two (HD)
+      </h2>
+
+      <div class="video-player-wrapper">
+        <!-- Ganti src="..." ini dengan link Embed Full Movie YouTube asli -->
+        <iframe
+          id="main-streaming-player"
+          src="https://www.youtube.com/embed/Way9Dexny3w"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="server-controls">
+        <span class="server-label"
+          ><i data-feather="server" width="18"></i> Pilih Server:</span
+        >
+        <!-- Ganti data-src="..." dengan opsi server/kualitas lainnya -->
+        <button
+          class="btn-server active"
+          data-src="https://www.youtube.com/embed/Way9Dexny3w"
+        >
+          <i data-feather="check-circle" width="14"></i> Server 1 (FHD)
+        </button>
+        <button
+          class="btn-server"
+          data-src="https://www.youtube.com/embed/U2Qp5pL3ovA"
+        >
+          <i data-feather="video" width="14"></i> Server 2 (HD)
+        </button>
+      </div>
+    </section>
+
+    <!-- MODAL TRAILER -->
+    <div class="modal-overlay" id="trailer-modal">
+      <div class="modal-content">
+        <button class="btn-tutup-modal" id="btn-tutup-trailer">
+          <i data-feather="x"></i> Tutup
+        </button>
+        <!-- Ganti src="..." ini dengan link Trailer. Biarkan ?enablejsapi=1 tetap ada -->
+        <iframe
+          id="youtube-iframe"
+          src="https://www.youtube.com/embed/Way9Dexny3w?enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Memanggil JS Global dan Khusus -->
+    <script src="../../assets/js/navbar.js"></script>
+    <script src="../../assets/js/detail-film.js"></script>
+  </body>
+</html>
