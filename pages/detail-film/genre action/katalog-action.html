@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katalog Horror - Pilin.in</title>
+
+    <!-- Poppins Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Memanggil CSS -->
+    <link rel="stylesheet" href="../../../assets/css/navbar.css" />
+    <link rel="stylesheet" href="../../../assets/css/daftar-film.css" />
+    
+  </head>
+  <body>
+    <!-- NAVBAR (Dilengkapi dengan div Logika Login/Guest terbaru) -->
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="daftar-film.html" class="logo-container">
+          <i data-feather="film" class="logo-icon"></i>
+          <span class="logo-text">Pilin.<i>in</i> </span>
+        </a>
+        <ul class="nav-links">
+          <li>
+            <a
+              href="daftar-film.html"
+              style="
+                color: var(--text-main);
+                border-bottom: 2px solid var(--primary);
+              "
+              >Katalog</a
+            >
+          </li>
+          <li class="dropdown">
+            <button class="dropdown-trigger" id="about-us-trigger">
+              About Us <i data-feather="chevron-down"></i>
+            </button>
+            <ul class="dropdown-menu" id="about-us-menu">
+              <li><a href="../web-pribadi/wisnu.html">Wisnu Aji</a></li>
+              <li><a href="#">Rina</a></li>
+              <li><a href="#">Yolanda</a></li>
+              <li>
+                <a href="#" style="color: var(--primary)">Restu (Kamu)</a>
+              </li>
+              <li><a href="#">Rizky</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="search-container">
+        <i data-feather="search" class="search-icon"></i>
+        <input type="text" placeholder="Search movies, actors..." />
+      </div>
+
+      <!-- Area Aksi dengan logika JS (Login vs Guest) -->
+      <div class="action-section">
+        <div
+          id="nav-guest"
+          style="display: flex; gap: 1.5rem; align-items: center"
+        >
+          <a href="../login/login.html" class="login-link">Masuk</a>
+          <a href="../daftar/daftar.html" class="register-btn">Daftar</a>
+        </div>
+
+        <div
+          id="nav-user"
+          class="d-none"
+          style="display: flex; gap: 1.5rem; align-items: center"
+        >
+          <div class="notification-bell">
+            <i data-feather="bell"></i>
+            <span class="badge-red">3</span>
+          </div>
+          <a
+            href="../dashboard-guest/dashboard-guest.html"
+            class="user-profile-menu"
+          >
+            <img
+              src="https://placehold.co/100x100/161313/ff6b6b?text=W"
+              alt="Avatar"
+              class="user-avatar"
+            />
+            <span style="font-weight: 600; font-size: 0.95rem">Wisnu Aji</span>
+          </a>
+          <button id="btn-logout" class="logout-btn" title="Keluar">
+            <i data-feather="log-out" width="18"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="catalog-container">
+      <header class="catalog-header">
+        <!-- Judul Halaman Berubah -->
+        <h1 class="catalog-title">
+          Eksplorasi Film: <span style="color: var(--primary)">Horror</span>
+        </h1>
+
+        <div class="filter-section">
+          <select class="filter-select">
+            <option value="">Semua Genre</option>
+            <option value="action">Action</option>
+            <!-- Tambahkan atribut "selected" agar opsi Horror langsung terpilih di halaman ini -->
+            <option value="horror" selected>Horror</option>
+            <option value="drama">Drama</option>
+            <option value="sci-fi">Sci-Fi</option>
+          </select>
+          <select class="filter-select">
+            <option value="">Tahun Rilis</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="lama">Sebelum 2022</option>
+          </select>
+          <select class="filter-select">
+            <option value="populer">Terpopuler</option>
+            <option value="rating">Rating Tertinggi</option>
+          </select>
+        </div>
+      </header>
+
+      <!-- Grid Poster Film (Hanya menampilkan film-film seram) -->
+      <section class="movie-grid">
+        <article class="movie-card">
+          <div class="poster-container">
+            <img
+              src="https://placehold.co/400x600/161313/ff6b6b?text=EXHUMA"
+              alt="Exhuma"
+              class="poster-img"
+            />
+            <div class="poster-overlay">
+              <!-- Path sudah disesuaikan -->
+              <a href="detail-film/exhuma.html" class="btn-detail">
+                <i data-feather="play-circle"></i> Lihat Detail
+              </a>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3 class="movie-title">Exhuma</h3>
+            <div class="movie-meta">
+              <span>2024 • Horror</span>
+              <span class="movie-rating"
+                ><i data-feather="star" style="width: 14px; fill: #ffd700"></i>
+                8.1</span
+              >
+            </div>
+          </div>
+        </article>
+
+        <article class="movie-card">
+          <div class="poster-container">
+            <img
+              src="https://placehold.co/400x600/161313/ff6b6b?text=THE+NUN"
+              alt="The Nun"
+              class="poster-img"
+            />
+            <div class="poster-overlay">
+              <a href="#" class="btn-detail"
+                ><i data-feather="play-circle"></i> Lihat Detail</a
+              >
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3 class="movie-title">The Nun II</h3>
+            <div class="movie-meta">
+              <span>2023 • Horror</span>
+              <span class="movie-rating"
+                ><i data-feather="star" style="width: 14px; fill: #ffd700"></i>
+                6.5</span
+              >
+            </div>
+          </div>
+        </article>
+
+        <article class="movie-card">
+          <div class="poster-container">
+            <img
+              src="https://placehold.co/400x600/161313/ff6b6b?text=CONJURING"
+              alt="The Conjuring"
+              class="poster-img"
+            />
+            <div class="poster-overlay">
+              <a href="#" class="btn-detail"
+                ><i data-feather="play-circle"></i> Lihat Detail</a
+              >
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3 class="movie-title">The Conjuring</h3>
+            <div class="movie-meta">
+              <span>2013 • Horror</span>
+              <span class="movie-rating"
+                ><i data-feather="star" style="width: 14px; fill: #ffd700"></i>
+                8.9</span
+              >
+            </div>
+          </div>
+        </article>
+
+        <article class="movie-card">
+          <div class="poster-container">
+            <img
+              src="https://placehold.co/400x600/161313/ff6b6b?text=INSIDIOUS"
+              alt="Insidious"
+              class="poster-img"
+            />
+            <div class="poster-overlay">
+              <a href="#" class="btn-detail"
+                ><i data-feather="play-circle"></i> Lihat Detail</a
+              >
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3 class="movie-title">Insidious: The Red Door</h3>
+            <div class="movie-meta">
+              <span>2023 • Thriller</span>
+              <span class="movie-rating"
+                ><i data-feather="star" style="width: 14px; fill: #ffd700"></i>
+                7.0</span
+              >
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Pagination (Opsional dihilangkan jika hasil filter sedikit) -->
+      <div class="pagination">
+        <a href="#" class="page-btn active">1</a>
+      </div>
+    </main>
+
+    <!-- Memanggil Script JS -->
+    <script src="../../../assets/js/navbar.js"></script>
+    <script src="../../../assets/js/daftar-film.js"></script>
+  </body>
+</html>

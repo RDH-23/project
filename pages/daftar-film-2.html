@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Katalog Film - Pilin.in</title>
+    <title>Katalog Film (Hal 2) - Pilin.in</title>
 
     <!-- Poppins Font -->
     <link
@@ -12,20 +12,23 @@
     />
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
+
     <link rel="stylesheet" href="../assets/css/navbar.css" />
     <link rel="stylesheet" href="../assets/css/daftar-film.css" />
   </head>
   <body>
+    <!-- NAVBAR (Asumsi User Sudah Login seperti di Dashboard) -->
     <nav class="navbar">
       <div class="navbar-left">
-        <a href="#" class="logo-container">
+        <a href="daftar-film.html" class="logo-container">
           <i data-feather="film" class="logo-icon"></i>
           <span class="logo-text">Pilin.<i>in</i> </span>
         </a>
         <ul class="nav-links">
+          <!-- Tanda garis bawah merah (active) ada di menu Katalog -->
           <li>
             <a
-              href="#"
+              href="daftar-film.html"
               style="
                 color: var(--text-main);
                 border-bottom: 2px solid var(--primary);
@@ -33,20 +36,7 @@
               >Katalog</a
             >
           </li>
-          <li class="dropdown">
-            <button class="dropdown-trigger" id="about-us-trigger">
-              About Us <i data-feather="chevron-down"></i>
-            </button>
-            <ul class="dropdown-menu" id="about-us-menu">
-              <li><a href="../web-pribadi/wisnu.html">Wisnu Aji</a></li>
-              <li><a href="#rina">Rina</a></li>
-              <li><a href="#yolanda">Yolanda</a></li>
-              <li>
-                <a href="#restu" style="color: var(--primary)">Restu (Kamu)</a>
-              </li>
-              <li><a href="#rizky">Rizky</a></li>
-            </ul>
-          </li>
+          <li><a href="#">Komunitas</a></li>
         </ul>
       </div>
       <div class="search-container">
@@ -54,23 +44,29 @@
         <input type="text" placeholder="Search movies, actors..." />
       </div>
       <div class="action-section">
-        <a
-          href="../dashboard-guest/dashboard-guest.html"
-          class="profile-link"
-          aria-label="User Profile"
-        >
-          <i data-feather="user"></i>
+        <div class="notification-bell">
+          <i data-feather="bell"></i>
+          <span class="badge-red">3</span>
+        </div>
+        <a href="dashboard-user.html" class="user-profile-menu">
+          <img
+            src="https://placehold.co/100x100/161313/ff6b6b?text=W"
+            alt="Avatar Wisnu"
+            class="user-avatar"
+          />
+          <span style="font-weight: 600; font-size: 0.95rem">Wisnu Aji</span>
         </a>
-        <a href="../login/login.html" class="login-link">Masuk</a>
-        <a href="../daftar/daftar.html" class="register-btn">Daftar</a>
+        <a href="../login/login.html" class="logout-btn" title="Keluar"
+          ><i data-feather="log-out" width="18"></i
+        ></a>
       </div>
     </nav>
 
-    <!-- KONTEN UTAMA: KATALOG MASTER -->
+    <!-- KONTEN UTAMA: KATALOG HALAMAN 2 -->
     <main class="catalog-container">
-      <!-- Header & Filter -->
       <header class="catalog-header">
-        <h1 class="catalog-title">Eksplorasi Film</h1>
+        <!-- Sedikit penyesuaian judul agar pengunjung tahu mereka di Halaman 2 -->
+        <h1 class="catalog-title">Eksplorasi Film (Hal 2)</h1>
         <div class="filter-section">
           <select class="filter-select">
             <option value="">Semua Genre</option>
@@ -95,31 +91,78 @@
         </div>
       </header>
 
-      <!-- Grid Poster Film -->
+      <!-- Grid Poster Film (Berisi Daftar Film Baru) -->
       <section class="movie-grid">
-        <!-- Card 1 -->
+        <!-- Card 7 -->
         <article class="movie-card">
           <div class="poster-container">
-            <!-- URL gambar dari placeholder generator agar rapi -->
             <img
-              src="https://placehold.co/400x600/161313/ff6b6b?text=DUNE+PART+2"
-              alt="Dune Part 2"
+              src="https://placehold.co/400x600/161313/ff6b6b?text=THE+BATMAN"
+              alt="The Batman"
               class="poster-img"
             />
             <div class="poster-overlay">
-              <!-- Tautan ini nanti mengarah ke tugasmu selanjutnya (Detail Film) -->
-              <a
-                href="../pages/detail-film/genre action/dune_part_two.html"
-                class="btn-detail"
-              >
+              <a href="detail-film/batman.html" class="btn-detail">
                 <i data-feather="play-circle"></i> Lihat Detail
               </a>
             </div>
           </div>
           <div class="movie-info">
-            <h3 class="movie-title">Dune: Part Two</h3>
+            <h3 class="movie-title">The Batman</h3>
             <div class="movie-meta">
-              <span>2024 • Sci-Fi</span>
+              <span>2022 • Action</span>
+              <span class="movie-rating"
+                ><i data-feather="star" style="width: 14px; fill: #ffd700"></i>
+                8.5</span
+              >
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 8 -->
+        <article class="movie-card">
+          <div class="poster-container">
+            <img
+              src="https://placehold.co/400x600/161313/ff6b6b?text=INTERSTELLAR"
+              alt="Interstellar"
+              class="poster-img"
+            />
+            <div class="poster-overlay">
+              <a href="#" class="btn-detail">
+                <i data-feather="play-circle"></i> Lihat Detail
+              </a>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3 class="movie-title">Interstellar</h3>
+            <div class="movie-meta">
+              <span>2014 • Sci-Fi</span>
+              <span class="movie-rating"
+                ><i data-feather="star" style="width: 14px; fill: #ffd700"></i>
+                9.2</span
+              >
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 9 -->
+        <article class="movie-card">
+          <div class="poster-container">
+            <img
+              src="https://placehold.co/400x600/161313/ff6b6b?text=PARASITE"
+              alt="Parasite"
+              class="poster-img"
+            />
+            <div class="poster-overlay">
+              <a href="#" class="btn-detail">
+                <i data-feather="play-circle"></i> Lihat Detail
+              </a>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3 class="movie-title">Parasite</h3>
+            <div class="movie-meta">
+              <span>2019 • Thriller</span>
               <span class="movie-rating"
                 ><i data-feather="star" style="width: 14px; fill: #ffd700"></i>
                 8.9</span
@@ -128,105 +171,76 @@
           </div>
         </article>
 
-        <!-- Card 2 -->
+        <!-- Card 10 -->
         <article class="movie-card">
           <div class="poster-container">
             <img
-              src="https://placehold.co/400x600/161313/ff6b6b?text=OPPENHEIMER"
-              alt="Oppenheimer"
+              src="https://placehold.co/400x600/161313/ff6b6b?text=AVENGERS"
+              alt="Avengers Endgame"
               class="poster-img"
             />
             <div class="poster-overlay">
-              <a
-                href="detail-film/genre action/dune_part_two.html"
-                class="btn-detail"
-              >
+              <a href="#" class="btn-detail">
                 <i data-feather="play-circle"></i> Lihat Detail
               </a>
             </div>
           </div>
           <div class="movie-info">
-            <h3 class="movie-title">Oppenheimer</h3>
+            <h3 class="movie-title">Avengers: Endgame</h3>
             <div class="movie-meta">
-              <span>2023 • Biography</span>
+              <span>2019 • Action</span>
               <span class="movie-rating"
                 ><i data-feather="star" style="width: 14px; fill: #ffd700"></i>
-                8.6</span
+                8.8</span
               >
             </div>
           </div>
         </article>
 
-        <!-- Card 3 -->
+        <!-- Card 11 -->
         <article class="movie-card">
           <div class="poster-container">
             <img
-              src="https://placehold.co/400x600/161313/ff6b6b?text=SPIDER-MAN"
-              alt="Spider Man"
+              src="https://placehold.co/400x600/161313/ff6b6b?text=JOKER"
+              alt="Joker"
               class="poster-img"
             />
             <div class="poster-overlay">
-              <a href="detail-film.html" class="btn-detail">
+              <a href="#" class="btn-detail">
                 <i data-feather="play-circle"></i> Lihat Detail
               </a>
             </div>
           </div>
           <div class="movie-info">
-            <h3 class="movie-title">Spider-Man: Across The Spider-Verse</h3>
+            <h3 class="movie-title">Joker</h3>
             <div class="movie-meta">
-              <span>2023 • Animation</span>
+              <span>2019 • Drama</span>
               <span class="movie-rating"
                 ><i data-feather="star" style="width: 14px; fill: #ffd700"></i>
-                9.0</span
+                8.7</span
               >
             </div>
           </div>
         </article>
 
-        <!-- Card 4 -->
+        <!-- Card 12 -->
         <article class="movie-card">
           <div class="poster-container">
             <img
-              src="https://placehold.co/400x600/161313/ff6b6b?text=EXHUMA"
-              alt="Exhuma"
+              src="https://placehold.co/400x600/161313/ff6b6b?text=E.E.A.A.O"
+              alt="Everything Everywhere All at Once"
               class="poster-img"
             />
             <div class="poster-overlay">
-              <a href="detail-film.html" class="btn-detail">
+              <a href="#" class="btn-detail">
                 <i data-feather="play-circle"></i> Lihat Detail
               </a>
             </div>
           </div>
           <div class="movie-info">
-            <h3 class="movie-title">Exhuma</h3>
+            <h3 class="movie-title">Everything Everywhere...</h3>
             <div class="movie-meta">
-              <span>2024 • Horror</span>
-              <span class="movie-rating"
-                ><i data-feather="star" style="width: 14px; fill: #ffd700"></i>
-                8.1</span
-              >
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 5 -->
-        <article class="movie-card">
-          <div class="poster-container">
-            <img
-              src="https://placehold.co/400x600/161313/ff6b6b?text=JOHN+WICK+4"
-              alt="John Wick 4"
-              class="poster-img"
-            />
-            <div class="poster-overlay">
-              <a href="detail-film.html" class="btn-detail">
-                <i data-feather="play-circle"></i> Lihat Detail
-              </a>
-            </div>
-          </div>
-          <div class="movie-info">
-            <h3 class="movie-title">John Wick: Chapter 4</h3>
-            <div class="movie-meta">
-              <span>2023 • Action</span>
+              <span>2022 • Adventure</span>
               <span class="movie-rating"
                 ><i data-feather="star" style="width: 14px; fill: #ffd700"></i>
                 8.4</span
@@ -234,47 +248,31 @@
             </div>
           </div>
         </article>
-
-        <!-- Card 6 -->
-        <article class="movie-card">
-          <div class="poster-container">
-            <img
-              src="https://placehold.co/400x600/161313/ff6b6b?text=AGAK+LAEN"
-              alt="Agak Laen"
-              class="poster-img"
-            />
-            <div class="poster-overlay">
-              <a href="detail-film.html" class="btn-detail">
-                <i data-feather="play-circle"></i> Lihat Detail
-              </a>
-            </div>
-          </div>
-          <div class="movie-info">
-            <h3 class="movie-title">Agak Laen</h3>
-            <div class="movie-meta">
-              <span>2024 • Comedy</span>
-              <span class="movie-rating"
-                ><i data-feather="star" style="width: 14px; fill: #ffd700"></i>
-                8.5</span
-              >
-            </div>
-          </div>
-        </article>
       </section>
 
-      <!-- Pagination (Simulasi Halaman) -->
       <div class="pagination">
-        <a href="#" class="page-btn"><i data-feather="chevron-left"></i></a>
-        <a href="#" class="page-btn active">1</a>
-        <a href="daftar-film-2.html" class="page-btn">2</a>
+        <!-- Tombol Panah Kiri kembali ke Halaman 1 -->
+        <a href="daftar-film.html" class="page-btn"
+          ><i data-feather="chevron-left"></i
+        ></a>
+
+        <!-- Angka 1 Tidak Aktif, tetapi bisa diklik untuk ke Halaman 1 -->
+        <a href="daftar-film.html" class="page-btn">1</a>
+
+        <!-- Angka 2 AKTIF (Merah) karena kita sedang di Halaman 2 -->
+        <a href="daftar-film-2.html" class="page-btn active">2</a>
+
+        <!-- Angka 3 mengarah ke Halaman 3 (Opsional jika mau dibuat) -->
         <a href="#" class="page-btn">3</a>
+
         <span style="color: var(--text-secondary)">...</span>
         <a href="#" class="page-btn">10</a>
-        <a href="daftar-film-2.html" class="page-btn"
-          ><i data-feather="chevron-right"></i
-        ></a>
+
+        <!-- Tombol Panah Kanan ke Halaman 3 -->
+        <a href="#" class="page-btn"><i data-feather="chevron-right"></i></a>
       </div>
     </main>
+
     <script src="../assets/js/navbar.js"></script>
     <script src="../assets/js/daftar-film.js"></script>
   </body>
