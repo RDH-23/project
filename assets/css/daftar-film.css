@@ -1,0 +1,189 @@
+/* 3. AREA 1: KATALOG MASTER (TUGASMU) */
+.catalog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* --- Header & Filter Statis --- */
+.catalog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.catalog-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.filter-section {
+  display: flex;
+  gap: 1rem;
+}
+
+.filter-select {
+  background-color: var(--bg-section);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.filter-select:focus,
+.filter-select:hover {
+  border-color: var(--primary);
+}
+
+/* --- CSS Grid Layout (Responsif) --- */
+.movie-grid {
+  display: grid;
+  /* Auto-fill membuat grid menyesuaikan lebar layar. Minimal 200px per poster */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+/* --- Movie Card & Hover Effects (Fitur UI) --- */
+.movie-card {
+  background-color: var(--bg-section);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  position: relative;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px); /* Efek mengangkat */
+  border-color: var(--primary);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Container Poster agar ukurannya konsisten (rasio 2:3) */
+.poster-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+}
+
+.poster-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.movie-card:hover .poster-img {
+  transform: scale(1.1); /* Efek zoom in pada poster */
+}
+
+/* Lapisan gelap dan tombol yang muncul saat di-hover */
+.poster-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(11, 15, 12, 0.8); /* Warna background web transparan */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Awalnya tembus pandang/hilang */
+  transition: opacity 0.3s ease;
+}
+
+.movie-card:hover .poster-overlay {
+  opacity: 1; /* Muncul saat di hover */
+}
+
+.btn-detail {
+  background-color: var(--primary);
+  color: var(--text-main);
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transform: translateY(20px); /* Posisi awal agak ke bawah */
+  transition:
+    transform 0.3s ease,
+    background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.movie-card:hover .btn-detail {
+  transform: translateY(0); /* Meluncur ke atas saat di hover */
+}
+
+.btn-detail:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Info di bawah poster */
+.movie-info {
+  padding: 1rem;
+}
+
+.movie-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Judul kepanjangan dipotong pakai '...' */
+}
+
+.movie-meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.movie-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #ffd700; /* Warna emas untuk bintang */
+}
+
+/* --- Pagination Statis --- */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.page-btn {
+  background-color: var(--bg-section);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.page-btn:hover,
+.page-btn.active {
+  background-color: var(--primary);
+  color: var(--text-main);
+  border-color: var(--primary);
+}
