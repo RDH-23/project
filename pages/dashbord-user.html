@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Pengguna - Pilin.in</title>
+
+    <!-- Poppins Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <link rel="stylesheet" href="../assets/css/navbar.css" />
+    <link rel="stylesheet" href="../assets/css/dashboard-user.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="navbar.html" class="logo-container">
+          <i data-feather="film" class="logo-icon"></i>
+          <span class="logo-text">Pilin.<i>in</i> </span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="daftar-film.html">Katalog</a></li>
+          <li><a href="#">Komunitas</a></li>
+        </ul>
+      </div>
+
+      <div class="search-container">
+        <i data-feather="search" class="search-icon"></i>
+        <input type="text" placeholder="Search movies, actors..." />
+      </div>
+
+      <div class="action-section">
+        <div class="notification-bell">
+          <i data-feather="bell"></i>
+          <span class="badge-red">3</span>
+        </div>
+
+        <a href="dashbord-user.html" class="user-profile-menu">
+          <img
+            src="https://placehold.co/100x100/161313/ff6b6b?text=W"
+            alt="User"
+            class="user-avatar"
+          />
+          <span style="font-weight: 600; font-size: 0.95rem">User</span>
+        </a>
+
+        <!-- TAUTAN: Keluar menuju folder login -->
+        <a href="#" class="logout-btn" title="Keluar"
+          ><i data-feather="log-out" width="18"></i
+        ></a>
+      </div>
+    </nav>
+
+    <!-- KONTEN UTAMA DASHBOARD USER -->
+    <main class="dashboard-container">
+      <!-- Header Profil -->
+      <header class="welcome-header">
+        <img
+          src="https://placehold.co/200x200/161313/ff6b6b?text=WA"
+          alt="Nama User"
+          class="welcome-avatar"
+        />
+        <div class="welcome-text">
+          <h1 id="greeting-text">Selamat Datang, Nama User!</h1>
+          <p>
+            Siap untuk melanjutkan maraton filmmu hari ini?
+            <span class="user-badge">Pecinta Film</span>
+          </p>
+        </div>
+      </header>
+
+      <!-- Area Kiri: Konten Utama -->
+      <div class="main-content">
+        <!-- Section: Lanjutkan Menonton -->
+        <section>
+          <h2 class="section-header">
+            <i data-feather="play-circle" color="#ff6b6b"></i> Lanjutkan
+            Menonton
+          </h2>
+          <div class="continue-grid">
+            <!-- Card 1: TAUTAN ke detail film Dune -->
+            <a href="detail-film/genre action/dune_part_two.html" class="continue-card">
+              <div class="continue-img-wrapper">
+                <img
+                  src="https://placehold.co/400x200/161313/3a1f1f?text=Dune+Scene"
+                  alt="Dune"
+                />
+                <div class="play-overlay">
+                  <i
+                    data-feather="play"
+                    color="white"
+                    width="40"
+                    height="40"
+                  ></i>
+                </div>
+              </div>
+              <div class="continue-info">
+                <h3 class="continue-title">Dune: Part Two</h3>
+                <!-- Atribut data-progress dibaca oleh Javascript -->
+                <div class="progress-bar-bg">
+                  <div class="progress-fill" data-progress="65%"></div>
+                </div>
+                <span class="progress-text">Tersisa 45 menit</span>
+              </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="#" class="continue-card">
+              <div class="continue-img-wrapper">
+                <img
+                  src="https://placehold.co/400x200/161313/3a1f1f?text=Oppenheimer+Scene"
+                  alt="Oppenheimer"
+                />
+                <div class="play-overlay">
+                  <i
+                    data-feather="play"
+                    color="white"
+                    width="40"
+                    height="40"
+                  ></i>
+                </div>
+              </div>
+              <div class="continue-info">
+                <h3 class="continue-title">Oppenheimer</h3>
+                <div class="progress-bar-bg">
+                  <div class="progress-fill" data-progress="20%"></div>
+                </div>
+                <span class="progress-text">Tersisa 2j 10 menit</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- Section: Watchlist -->
+        <section>
+          <h2 class="section-header">
+            <i data-feather="bookmark" color="#ff6b6b"></i> Watchlist Pribadi
+          </h2>
+          <div class="watchlist-container" id="watchlist-container">
+            <!-- Item 1 -->
+            <div class="watchlist-item">
+              <img
+                src="https://placehold.co/100x150/161313/ff6b6b?text=EXHUMA"
+                alt="Exhuma"
+                class="watchlist-poster"
+              />
+              <a href="detail-film/exhuma.html" class="watchlist-details">
+                <h4 class="watchlist-title">Exhuma</h4>
+                <span class="watchlist-meta"
+                  >2024 • Horror • Disimpan 2 hari lalu</span
+                >
+              </a>
+              <button class="btn-remove" title="Hapus dari Watchlist">
+                <i data-feather="trash-2"></i>
+              </button>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="watchlist-item">
+              <img
+                src="https://placehold.co/100x150/161313/ff6b6b?text=AGAK+LAEN"
+                alt="Agak Laen"
+                class="watchlist-poster"
+              />
+              <a href="#" class="watchlist-details">
+                <h4 class="watchlist-title">Agak Laen</h4>
+                <span class="watchlist-meta"
+                  >2024 • Comedy • Disimpan 1 minggu lalu</span
+                >
+              </a>
+              <button class="btn-remove" title="Hapus dari Watchlist">
+                <i data-feather="trash-2"></i>
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Area Kanan: Sidebar Widget -->
+      <aside class="sidebar-widgets">
+        <!-- Widget 1: Statistik -->
+        <div class="widget-panel">
+          <h3 class="widget-title">Statistik Tontonan</h3>
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-number">124</div>
+              <div class="stat-label">Film Selesai</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">
+                340<span style="font-size: 1rem">j</span>
+              </div>
+              <div class="stat-label">Waktu Nonton</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Widget 2: Aktivitas Teman -->
+        <div class="widget-panel">
+          <h3 class="widget-title">Aktivitas Teman</h3>
+          <div
+            style="
+              font-size: 0.9rem;
+              color: var(--text-secondary);
+              margin-bottom: 0.8rem;
+            "
+          >
+            <strong style="color: var(--text-main)">Rina</strong> memberi rating
+            5 bintang untuk <em>Spider-Man</em>.
+          </div>
+          <div style="font-size: 0.9rem; color: var(--text-secondary)">
+            <strong style="color: var(--text-main)">Yolanda</strong> menambahkan
+            <em>Dune Part 2</em> ke watchlist-nya.
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/dashboard-user.js"></script>
+  </body>
+</html>

@@ -1,0 +1,263 @@
+.dashboard-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 350px; /* Layout: Kiri besar, Kanan kecil */
+  gap: 2rem;
+}
+
+/* --- Profil Header --- */
+.welcome-header {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, var(--bg-section) 0%, #2a1515 100%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  object-fit: cover;
+}
+.welcome-text h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.welcome-text p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+.user-badge {
+  background-color: rgba(255, 107, 107, 0.15);
+  color: var(--primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+/* --- Area Kiri (Watchlist & History) --- */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.section-header {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Continue Watching Cards */
+.continue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.continue-card {
+  background-color: var(--bg-section);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.continue-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--text-secondary);
+}
+.continue-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 140px;
+}
+.continue-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.continue-card:hover .play-overlay {
+  opacity: 1;
+}
+.continue-info {
+  padding: 1rem;
+}
+.continue-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 6px;
+  background-color: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+.progress-fill {
+  height: 100%;
+  background-color: var(--primary);
+  width: 0;
+  transition: width 1s ease-out;
+}
+.progress-text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Watchlist List View */
+/* Watchlist List View (Diperbarui) */
+.watchlist-item {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-section);
+  border: 1px solid var(--border);
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  gap: 1rem;
+  transition: border-color 0.2s;
+}
+.watchlist-item:hover {
+  border-color: var(--primary);
+}
+
+/* Memperbesar sedikit ukuran poster agar teks placeholder terlihat jelas */
+.watchlist-poster {
+  width: 60px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+  background-color: #1a1616; /* Warna cadangan jika gambar gagal load */
+}
+
+/* Memperbaiki teks biru pada tautan */
+.watchlist-details {
+  flex-grow: 1;
+  text-decoration: none !important; /* Hilangkan garis bawah */
+  color: var(--text-main) !important; /* Hilangkan warna biru */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.watchlist-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: var(--text-main); /* Pastikan judul berwarna putih/terang */
+}
+
+.watchlist-meta {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.btn-remove {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-remove:hover {
+  color: white;
+  background-color: #ff4c4c;
+  border-color: #ff4c4c;
+}
+
+/* --- Area Kanan (Sidebar Widgets) --- */
+.sidebar-widgets {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.widget-panel {
+  background-color: var(--bg-section);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.widget-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+/* Widget Statistik */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.stat-box {
+  background-color: var(--bg-main);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+.stat-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 0.3rem;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+  }
+  .welcome-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
